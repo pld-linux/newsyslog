@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.developers ToDo VERSION newsyslog.conf
+%doc AUTHORS COPYING NEWS README ToDo VERSION newsyslog.conf
 %attr(755,root,root) %{_bindir}/newsyslog
 %{_mandir}/man5/newsyslog.conf.5*
 %{_mandir}/man8/newsyslog.8*
