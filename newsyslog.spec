@@ -1,12 +1,13 @@
 Summary:	Logfile Rotation Tool
+Summary(pl.UTF-8):	Narzędzie do rotacji logów
 Name:		newsyslog
 Version:	1.1
 Release:	0.1
 License:	BSD
 Group:		Base
-URL:		http://www.weird.com/~woods/projects/newsyslog.html
 Source0:	ftp://ftp.weird.com/pub/local/%{name}-%{version}.tar.gz
 # Source0-md5:	022eb25d8ea236c07f6bcb0084b7e205
+URL:		http://www.weird.com/~woods/projects/newsyslog.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -19,6 +20,17 @@ user-specified number of archived logs. The archived logs may also be
 compressed to save space. After all file operations are done newsyslog
 notifies the syslogd daemon, or optionally some log-file specific
 daemon, by sending a SIGHUP to the daemon process.
+
+%description -l pl.UTF-8
+newsyslog to program uruchamiany regularnie przez demona cron(8) w
+celu archiwizacji plików logów. Jeśli plik zostanie uznany za
+wymagający archiwizacji, newsyslog przemieszcza pliki tak, że "log"
+jest pusty, "log.0" jest zawiera logi z ostatniego okresu, "log.1" z
+poprzedniego i tak dalej, aż do określonej przez użytkownika liczby
+archiwizowanych logów. Składowane logi mogą także być kompresowane dla
+zaoszczędzenia miejsca. Po wykonaniu wszystkich operacji na plikach
+newsyslog powiadamia demona syslogd i opcjonalnie demona specyficznego
+dla konkretnego loga poprzez wysłanie sygnału SIGHUP do procesu.
 
 %prep
 %setup -q
